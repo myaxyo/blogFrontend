@@ -10,10 +10,22 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store';
+import { useEffect } from 'react';
 
 const Header = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState();
+  const path = window.location.href.split('/');
+  useEffect(() => {
+    if (path[4] == 'add') {
+      setValue(2);
+    } else if (path[3] == 'my-blogs') {
+      setValue(1);
+    } else if (path[3] == 'blogs') {
+      setValue(0);
+    }
+  }, []);
+
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   return (
     <AppBar position="sticky" sx={{ background: 'green', color: 'white' }}>
