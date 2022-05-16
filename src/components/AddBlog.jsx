@@ -5,8 +5,10 @@ import TextField from '@mui/material/TextField/TextField';
 import Typography from '@mui/material/Typography/Typography';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AddBlog = () => {
+  const navigate = useNavigate();
   const labelStyles = { mb: 1, mt: 2, fontSize: '24px', fontWeight: 'bold' };
   const [inputs, setInputs] = useState({
     title: '',
@@ -35,8 +37,7 @@ const AddBlog = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
-    sendRequest().then((data) => console.log(data));
+    sendRequest().then(() => navigate('/my-blogs'));
   };
   return (
     <div>
