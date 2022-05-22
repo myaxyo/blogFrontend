@@ -26,7 +26,7 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios(
-        `https://blogBackend.myaxyo.repl.co/api/blog/${blogId}`
+        `http://geekzone.uz/api/blog/${blogId}`
       ).catch((err) => console.log(err));
       const data = await res.data;
 
@@ -43,7 +43,7 @@ const BlogDetails = () => {
   }, [blogId]);
   const sendRequest = async () => {
     const res = await axios
-      .put(`https://blogBackend.myaxyo.repl.co/api/blog/update/${blogId}`, {
+      .put(`http://geekzone.uz/api/blog/update/${blogId}`, {
         title: inputs.title,
         description: inputs.description,
       })

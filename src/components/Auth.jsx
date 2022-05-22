@@ -25,7 +25,7 @@ const Auth = () => {
 
   const authRequest = async (type = 'login') => {
     const res = await axios
-      .post(`https://blogBackend.myaxyo.repl.co/api/user/${type}`, {
+      .post(`http://geekzone.uz/api/user/${type}`, {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,

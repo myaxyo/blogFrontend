@@ -15,7 +15,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState();
   const blogRequest = async () => {
     const res = await axios
-      .get('https://blogBackend.myaxyo.repl.co/api/blog')
+      .get('http://geekzone.uz/api/blog')
       .catch((err) => console.log(err));
     const data = await res.data;
     setIsLoaded(false);

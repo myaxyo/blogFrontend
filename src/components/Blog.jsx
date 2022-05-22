@@ -29,7 +29,7 @@ export default function Blog({
   };
   const deleteRequest = async () => {
     const res = await axios
-      .delete(`https://blogBackend.myaxyo.repl.co/api/blog/${id}`)
+      .delete(`http://geekzone.uz/api/blog/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

@@ -24,7 +24,7 @@ const AddBlog = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .post('https://blogBackend.myaxyo.repl.co/api/blog/add-blog', {
+      .post('https://geekzone/api/blog/add-blog', {
         title: inputs.title,
         description: inputs.description,
         image: inputs.imageURL,
